@@ -58,6 +58,7 @@ export NUGET_PACKAGES="${CACHE_DIR}/nuget/cache"
 echo "Intsall Paket tool"
 dotnet tool install --global Paket
 export PATH="$PATH:/app/.dotnet/tools"
+dotnet tool restore
 
 echo "publish ${PROJECT_FILE} for ${BUILD_CONFIGURATION}"
 dotnet publish $PROJECT_FILE --output ${BUILD_DIR}/heroku_output --configuration ${BUILD_CONFIGURATION} --runtime linux-x64
